@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   post "signup", to: "users#signup"
   
   get "profile", to: "users#profile"
+  patch "profile", to: "users#update"
 
-  patch "users/:id", to: "users#update"
   get "users/:id", to: "users#show"
 
 end

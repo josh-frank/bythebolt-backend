@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :authenticate, only: [ :profile ]
+    before_action :authenticate, only: [ :profile, :update ]
 
     def login
         user = User.find_by( username: params[ :username ] )
@@ -37,9 +37,16 @@ class UsersController < ApplicationController
     end
 
     def update
-        user_to_update = User.find( params[ :id ] )
-        user_to_update.update( username: params[ :username ], password: params[ :password ], avatar: params[ :avatar ], email: params[ :email ] )
+        user_to_update = User.find( @current_user.id )
+        user_to_update.update( user_params )
         render json: user_to_update
+    end
+
+    private
+
+    def user_params
+        # params.require( :user ).permit( :username, :password, :avatar, :email, :bio, :location )
+        params.require( :user ).permit!
     end
 
 end
