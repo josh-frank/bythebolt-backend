@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_230124) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "avatar"
     t.string "password_digest"
+    t.string "avatar_url"
     t.string "email"
     t.text "bio"
     t.float "location", array: true

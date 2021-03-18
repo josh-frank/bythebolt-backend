@@ -37,15 +37,23 @@ class UsersController < ApplicationController
     end
 
     def update
-        user_to_update = User.find( @current_user.id )
-        user_to_update.update( user_params )
-        render json: user_to_update
+        if params[ :avatar ]
+            avatar_data = Cloudinary::Uploader.unsigned_upload(
+                params[ :avatar ],
+                "zvedamwb",
+                cloud_name: "bythebolt",
+                public_id: "#{ @current_user.username }_avatar",
+                folder: "avatars" )
+            @current_user.update( avatar_url: avatar_data[ "url" ] )
+        else
+            @current_user.update( user_params )
+        end
+        render json: @current_user
     end
 
     private
 
     def user_params
-        # params.require( :user ).permit( :username, :password, :avatar, :email, :bio, :location )
         params.require( :user ).permit!
     end
 
