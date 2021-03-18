@@ -2,6 +2,9 @@ class User < ApplicationRecord
 
     has_secure_password
 
+    has_many :user_categories
+    has_many :categories, through: :user_categories
+
     validates :username, presence: true, uniqueness: { case_sensitive: false }
     validates :email,
         format: { with: URI::MailTo::EMAIL_REGEXP, message: "invalid"  },

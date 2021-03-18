@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_230124) do
+ActiveRecord::Schema.define(version: 2021_03_18_172631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_categories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_user_categories_on_category_id"
+    t.index ["user_id"], name: "index_user_categories_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -26,4 +41,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_230124) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "user_categories", "categories"
+  add_foreign_key "user_categories", "users"
 end
