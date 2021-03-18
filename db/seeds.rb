@@ -19,6 +19,7 @@ Category.create( name: "Machines" )
 Category.create( name: "Services" )
 
 UserCategory.create( user: User.first, category: Category.first )
+UserCategory.create( user: User.first, category: Category.third )
 
 done_seeding = Time.now
 
