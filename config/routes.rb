@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   
   get "users/:id", to: "users#show"
 
+  ########## UserCategories ##########
+  
+  post "user_categories", to: "user_categories#create"
+  delete "user_categories/:id", to: "user_categories#destroy"
+
   ########## Categories ##########
 
   get "categories", to: "categories#index"
