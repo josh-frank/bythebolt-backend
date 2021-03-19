@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :listings
   resources :user_categories
   ########## Auth ##########
   
@@ -15,5 +16,10 @@ Rails.application.routes.draw do
   ########## Categories ##########
 
   get "categories", to: "categories#index"
+
+  ########## Listings ##########
+
+  get "listings", to: "listings#index"
+  get "listings/:id", to: "listings#show"
 
 end
