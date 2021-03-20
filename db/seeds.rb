@@ -1,6 +1,6 @@
 started_seeding = Time.now
 
-User.create(
+josh = User.create(
     username: "josh",
     password: "123",
     avatar_url: "https://res.cloudinary.com/bythebolt/image/upload/v1616078037/avatars/josh_avatar.jpg",
@@ -9,42 +9,45 @@ User.create(
     location: [ 40.76547518458087, -73.98536808381324 ]
 )
 
-Category.create( name: "Fabric" )
-Category.create( name: "Yarn" )
-Category.create( name: "Thread" )
-Category.create( name: "Notions" )
-Category.create( name: "Books/Magazines" )
-Category.create( name: "Patterns" )
-Category.create( name: "Machines" )
-Category.create( name: "Services" )
+fabric = Category.create( name: "Fabric" )
+yarn = Category.create( name: "Yarn" )
+thread = Category.create( name: "Thread" )
+notions = Category.create( name: "Notions" )
+books = Category.create( name: "Books/Magazines" )
+patterns = Category.create( name: "Patterns" )
+machines = Category.create( name: "Machines" )
+services = Category.create( name: "Services" )
 
-UserCategory.create( user: User.first, category: Category.first )
-UserCategory.create( user: User.first, category: Category.third )
+UserCategory.create( user: josh, category: fabric )
+UserCategory.create( user: josh, category: thread )
 
-Listing.create(
-    user: User.first,
+twill = Listing.create(
+    user: josh,
     title: "39 yds. Kuroki selvedge twill",
     description: "12 oz. left-hand twill, 100% sanforized cotton, from Kuroki Mills of Japan - smooth texture, rich khaki color",
     quantity: 39,
     unit: "yard",
     price: 5.99
 )
+ListingCategory.create( listing: twill, category: fabric )
 
-Listing.create(
-    user: User.first,
+bernina = Listing.create(
+    user: josh,
     title: "Bernina 117 sewing machine - great condition",
     description: "Beautiful Swiss-made Bernina 117K zig-zag sewing machine. Looks great for 80 years old, sews beautifully, in original wood carrying suitcase. Includes original tin, feet, some original accessories including screwdriver and buttonhole knife and original bobbin case. Cash on delivery only",
     quantity: 1,
     price: 1200
 )
+ListingCategory.create( listing: bernina, category: machines )
 
-Listing.create(
-    user: User.first,
+shears = Listing.create(
+    user: josh,
     title: "Wilkinson teflon-coated fabric shears 10cm - like new",
     description: "Great condition, no cracks or paint chips, cuts like new. 10\" length, 4.75\" cut length, weighs ~1lb. Made in Sheffield, England with hot-forged high-carbon tool steel, highly durable",
     quantity: 1,
     price: 79
 )
+ListingCategory.create( listing: shears, category: notions )
 
 done_seeding = Time.now
 

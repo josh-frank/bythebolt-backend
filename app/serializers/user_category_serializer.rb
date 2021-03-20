@@ -1,5 +1,7 @@
 class UserCategorySerializer < ActiveModel::Serializer
 
-  attributes :id, :category
+  attribute :id
+  
+  has_one :category
   
 end

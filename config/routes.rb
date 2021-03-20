@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :listings
-  resources :user_categories
   ########## Auth ##########
   
   post "login", to: "users#login"
