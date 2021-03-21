@@ -24,5 +24,6 @@ Rails.application.routes.draw do
 
   get "listings", to: "listings#index"
   get "listings/:id", to: "listings#show"
+  post "listings", to: "listings#create"
 
 end
