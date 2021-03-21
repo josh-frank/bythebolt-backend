@@ -65,6 +65,7 @@ bernina = Listing.create(
     ]
 )
 ListingCategory.create( listing: bernina, category: machines )
+FavoriteListing.create( user: elna, listing: bernina )
 
 shears = Listing.create(
     user: josh,
@@ -81,7 +82,8 @@ shears = Listing.create(
     ]
 )
 ListingCategory.create( listing: shears, category: notions )
+FavoriteListing.create( user: elna, listing: shears )
 
 done_seeding = Time.now
 
-puts "🌱🌱🌱🌱🌱🌱🌱 Seeded: #{ done_seeding - started_seeding } secs. 🌱🌱🌱🌱🌱🌱🌱"
+puts "🧵🧵🧵🧵🧵🧵 Seeded: #{ done_seeding - started_seeding } secs. 🧵🧵🧵🧵🧵🧵"

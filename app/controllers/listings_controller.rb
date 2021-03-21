@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+    before_action :authenticate, only: [ :destroy ]
+
     def index
         render json: Listing.all
     end
@@ -35,10 +37,15 @@ class ListingsController < ApplicationController
         render json: new_listing
     end
 
+    def destroy
+        Listing.find( params[ :id ] ).destroy
+        render json: @current_user
+    end
+
     private
 
     def listing_params
-        params.require( :listing ).permit!
+        params.permit!
     end
 
 end

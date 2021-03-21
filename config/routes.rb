@@ -23,7 +23,8 @@ Rails.application.routes.draw do
   ########## Listings ##########
 
   get "listings", to: "listings#index"
-  get "listings/:id", to: "listings#show"
   post "listings", to: "listings#create"
+  delete "listings/:id", to: "listings#destroy"
+  get "listings/:id", to: "listings#show"
 
 end

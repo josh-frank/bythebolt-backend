@@ -2,9 +2,13 @@ class User < ApplicationRecord
 
     has_secure_password
 
-    has_many :user_categories
+    has_many :user_categories, dependent: :destroy
     has_many :categories, through: :user_categories
-    has_many :listings
+
+    has_many :listings, dependent: :destroy
+
+    has_many :favorite_listings, dependent: :destroy
+    has_many :favorites, through: :favorite_listings, source: :listing
 
     validates :username, presence: true, uniqueness: { case_sensitive: false }
     validates :email,
