@@ -1,14 +1,5 @@
 started_seeding = Time.now
 
-josh = User.create(
-    username: "josh",
-    password: "123",
-    avatar_url: "https://res.cloudinary.com/bythebolt/image/upload/v1616078037/avatars/josh_avatar.jpg",
-    email: "EurosewUSA@gmail.com",
-    bio: "Nitwit oddment blubber tweak",
-    location: [ 40.76547518458087, -73.98536808381324 ]
-)
-
 fabric = Category.create( name: "Fabric" )
 yarn = Category.create( name: "Yarn" )
 thread = Category.create( name: "Thread" )
@@ -18,36 +9,78 @@ patterns = Category.create( name: "Patterns" )
 machines = Category.create( name: "Machines" )
 services = Category.create( name: "Services" )
 
+josh = User.create(
+    username: "josh",
+    password: "123",
+    avatar_url: "https://res.cloudinary.com/bythebolt/image/upload/v1616078037/avatars/josh_avatar.jpg",
+    email: "EurosewUSA@gmail.com",
+    bio: "Nitwit oddment blubber tweak",
+    location: [ 40.81962632696764, -73.98083585780115 ]
+)
 UserCategory.create( user: josh, category: fabric )
 UserCategory.create( user: josh, category: thread )
 
-# twill = Listing.create(
-#     user: josh,
-#     title: "39 yds. Kuroki selvedge twill",
-#     description: "12 oz. left-hand twill, 100% sanforized cotton, from Kuroki Mills of Japan - smooth texture, rich khaki color",
-#     quantity: 39,
-#     unit: "yard",
-#     price: 5.99
-# )
-# ListingCategory.create( listing: twill, category: fabric )
+elna = User.create(
+    username: "elna",
+    password: "123",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616291640/avatars/elna_avatar.png",
+    email: "info@elnagrasshopper.com",
+    bio: "Pack my box with five dozen liquor jugs",
+    location: [ 40.76547518458087, -73.98536808381324 ]
+)
+UserCategory.create( user: elna, category: yarn )
 
-# bernina = Listing.create(
-#     user: josh,
-#     title: "Bernina 117 sewing machine - great condition",
-#     description: "Beautiful Swiss-made Bernina 117K zig-zag sewing machine. Looks great for 80 years old, sews beautifully, in original wood carrying suitcase. Includes original tin, feet, some original accessories including screwdriver and buttonhole knife and original bobbin case. Cash on delivery only",
-#     quantity: 1,
-#     price: 1200
-# )
-# ListingCategory.create( listing: bernina, category: machines )
+twill = Listing.create(
+    user: josh,
+    title: "Kuroki selvedge twill BTY",
+    description: "12 oz. left-hand twill, 100% sanforized cotton, from Kuroki Mills of Japan - smooth texture, rich khaki color",
+    price: 11.99,
+    quantity: 39,
+    unit: "yard",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290192/listings/1/listing_1_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290193/listings/1/listing_1_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290195/listings/1/listing_1_image_2.jpg"
+    ]
+)
+ListingCategory.create( listing: twill, category: fabric )
 
-# shears = Listing.create(
-#     user: josh,
-#     title: "Wilkinson teflon-coated fabric shears 10cm - like new",
-#     description: "Great condition, no cracks or paint chips, cuts like new. 10\" length, 4.75\" cut length, weighs ~1lb. Made in Sheffield, England with hot-forged high-carbon tool steel, highly durable",
-#     quantity: 1,
-#     price: 79
-# )
-# ListingCategory.create( listing: shears, category: notions )
+bernina = Listing.create(
+    user: josh,
+    title: "Bernina 117 sewing machine - great condition",
+    description: "Beautiful Swiss-made Bernina 117K zig-zag sewing machine. Looks great for 80 years old, sews beautifully, in original wood carrying suitcase. Includes original tin, feet, some original accessories including screwdriver and buttonhole knife and original bobbin case. Cash on delivery only",
+    price: 1200,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290656/listings/2/listing_2_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290656/listings/2/listing_2_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290657/listings/2/listing_2_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290658/listings/2/listing_2_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290659/listings/2/listing_2_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290659/listings/2/listing_2_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290661/listings/2/listing_2_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290662/listings/2/listing_2_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290663/listings/2/listing_2_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290664/listings/2/listing_2_image_9.jpg"
+    ]
+)
+ListingCategory.create( listing: bernina, category: machines )
+
+shears = Listing.create(
+    user: josh,
+    title: "Wilkinson teflon-coated fabric shears 10cm - like new",
+    description: "Great condition, no cracks or paint chips, cuts like new. 10\" length, 4.75\" cut length, weighs ~1lb. Made in Sheffield, England with hot-forged high-carbon tool steel, highly durable",
+    price: 79,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616291054/listings/3/listing_3_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616291054/listings/3/listing_3_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616291055/listings/3/listing_3_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616291056/listings/3/listing_3_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616291056/listings/3/listing_3_image_4.jpg"
+    ]
+)
+ListingCategory.create( listing: shears, category: notions )
 
 done_seeding = Time.now
 

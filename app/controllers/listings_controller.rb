@@ -13,9 +13,9 @@ class ListingsController < ApplicationController
             user_id: params[ :user_id ],
             title: params[ :title ],
             description: params[ :description ],
-            price: params[ :price ].to_i,
+            price: params[ :price ].to_f,
             quantity: params[ :quantity ].to_i,
-            unit: params[ :unit ]
+            unit: [ "null", "undefined" ].include?( params[ :unit ] ) ? nil : params[ :unit ]
         )
         new_listing_image_urls = []
         params[ :images ].each_with_index do | image, index |
@@ -29,6 +29,9 @@ class ListingsController < ApplicationController
             new_listing_image_urls << new_image_data[ "url" ]
         end
         new_listing.update( image_urls: new_listing_image_urls )
+        params[ :categories ].map( &:to_i ).each do | category_id |
+            ListingCategory.create( listing_id: new_listing.id, category_id: category_id )
+        end
         render json: new_listing
     end
 
