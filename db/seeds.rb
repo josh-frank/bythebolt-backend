@@ -64,6 +64,7 @@ bernina = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290664/listings/2/listing_2_image_9.jpg"
     ]
 )
+bernina.update( created_at: bernina.created_at - 14.days )
 ListingCategory.create( listing: bernina, category: machines )
 FavoriteListing.create( user: elna, listing: bernina )
 
@@ -81,8 +82,32 @@ shears = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616291056/listings/3/listing_3_image_4.jpg"
     ]
 )
+shears.update( created_at: shears.created_at - 7.days )
 ListingCategory.create( listing: shears, category: notions )
 FavoriteListing.create( user: elna, listing: shears )
+
+strommen = Listing.create(
+    user: elna,
+    title: "Strømmen Bruk Hamar cantilevered sewing box",
+    description: "This beautiful mid-century modern oak sewing box was made in Norway in the 1950s. It has normal scratches and signs of wear but it is structurally sound and very complete with no broken parts. Sold empty with no accessories.",
+    price: 150,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381194/listings/4/listing_4_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381195/listings/4/listing_4_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381196/listings/4/listing_4_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381196/listings/4/listing_4_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381197/listings/4/listing_4_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381198/listings/4/listing_4_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381199/listings/4/listing_4_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381200/listings/4/listing_4_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381200/listings/4/listing_4_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381201/listings/4/listing_4_image_9.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381202/listings/4/listing_4_image_10.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616381203/listings/4/listing_4_image_11.jpg"
+    ]
+)
+strommen.update( created_at: strommen.created_at - 30.days )
 
 done_seeding = Time.now
 

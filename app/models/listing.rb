@@ -8,6 +8,6 @@ class Listing < ApplicationRecord
   has_many :favorite_listings, dependent: :destroy
   has_many :favorited_users, through: :favorite_listings, source: :user
 
-  validates_presence_of :title, :description, :price
+  validates_presence_of :title, :description, :quantity, :price
 
 end
