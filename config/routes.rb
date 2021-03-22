@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   delete "listings/:id", to: "listings#destroy"
   get "listings/:id", to: "listings#show"
   
-  ########## Listings ##########
+  ########## Favorites ##########
 
   post "favorites", to: "favorite_listings#create"
   delete "favorites/:id", to: "favorite_listings#destroy"
