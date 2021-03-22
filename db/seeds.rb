@@ -48,7 +48,7 @@ ListingCategory.create( listing: twill, category: fabric )
 bernina = Listing.create(
     user: josh,
     title: "Bernina 117 sewing machine - great condition",
-    description: "Beautiful Swiss-made Bernina 117K zig-zag sewing machine. Looks great for 80 years old, sews beautifully, in original wood carrying suitcase. Includes original tin, feet, some original accessories including screwdriver and buttonhole knife and original bobbin case. Cash on delivery only",
+    description: "Beautiful Swiss-made Bernina 117K zig-zag sewing machine. Looks great for 80 years old, sews beautifully, in original wood carrying suitcase. Includes original tin, feet, some original accessories including screwdriver and buttonhole knife and original bobbin case. Cash on local pickup only",
     price: 1200,
     quantity: 1,
     image_urls: [

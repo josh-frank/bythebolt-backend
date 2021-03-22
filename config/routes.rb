@@ -21,10 +21,15 @@ Rails.application.routes.draw do
   get "categories", to: "categories#index"
 
   ########## Listings ##########
-
+  
   get "listings", to: "listings#index"
   post "listings", to: "listings#create"
   delete "listings/:id", to: "listings#destroy"
   get "listings/:id", to: "listings#show"
+  
+  ########## Listings ##########
+
+  post "favorites", to: "favorite_listings#create"
+  delete "favorites/:id", to: "favorite_listings#destroy"
 
 end

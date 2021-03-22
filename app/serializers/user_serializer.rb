@@ -6,6 +6,6 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :listings, serializer: ListingSerializerForUser
 
-  has_many :favorites
+  has_many :favorite_listings, serializer: FavoriteListingSerializerForUser
 
 end
