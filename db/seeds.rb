@@ -111,6 +111,20 @@ strommen = Listing.create(
 ListingCategory.create( listing: strommen, category: notions )
 strommen.update( created_at: strommen.created_at - 30.days )
 
+voile = Listing.create(
+    user: elna,
+    title: "50yd bolt of black organic cotton voile",
+    description: "50 yards left on a 60-yard bolt of organic cotton voile. 58\" wide. Like new! Stored in a smoke and pet-free home! Shipping available with USPS Parcel Select Ground - please inquire for details",
+    price: 200,
+    quantity: 1,
+    unit: "bolt",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616519601/listings/5/listing_5_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616519601/listings/5/listing_5_image_1.jpg"
+    ]
+)
+ListingCategory.create( listing: voile, category: fabric )
+
 done_seeding = Time.now
 
 puts "🧵🧵🧵🧵🧵🧵 Seeded: #{ done_seeding - started_seeding } secs. 🧵🧵🧵🧵🧵🧵"
