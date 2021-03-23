@@ -7,5 +7,7 @@ class ListingSerializer < ActiveModel::Serializer
   has_one :user, serializer: UserSerializerForListing
 
   has_many :favorite_listings, key: :favorites, serializer: FavoriteListingSerializerForListing
+  
+  # add favorite_count method
 
 end

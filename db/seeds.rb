@@ -40,7 +40,8 @@ twill = Listing.create(
     image_urls: [
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290192/listings/1/listing_1_image_0.jpg",
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290193/listings/1/listing_1_image_1.jpg",
-        "http://res.cloudinary.com/bythebolt/image/upload/v1616290195/listings/1/listing_1_image_2.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290193/listings/1/listing_1_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616290195/listings/1/listing_1_image_3.jpg"
     ]
 )
 ListingCategory.create( listing: twill, category: fabric )
@@ -107,6 +108,7 @@ strommen = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616381203/listings/4/listing_4_image_11.jpg"
     ]
 )
+ListingCategory.create( listing: strommen, category: notions )
 strommen.update( created_at: strommen.created_at - 30.days )
 
 done_seeding = Time.now

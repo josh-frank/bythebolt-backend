@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 
-    before_action :authenticate, only: [ :destroy ]
+    before_action :authenticate, only: [ :create, :update, :destroy ]
 
     def index
         render json: Listing.all
@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
 
     def create
         new_listing = Listing.create(
-            user_id: params[ :user_id ],
+            user_id: @current_user.id,
             title: params[ :title ] == "undefined" ? nil : params[ :title ],
             description: params[ :description ] == "undefined" ? nil : params[ :description ],
             price: params[ :price ] == "undefined" ? nil : params[ :price ].to_f,
@@ -41,6 +41,43 @@ class ListingsController < ApplicationController
         end
     end
 
+    def update
+        if params[ :title ].empty? || params[ :description ].empty?
+            errors = []
+            errors << "Title can't be blank" if params[ :title ].empty?
+            errors << "Description can't be blank" if params[ :description ].empty?
+            render json: { errors: errors }, status: :unprocessable_entity
+        else
+            listing_to_edit = Listing.find( params[ :id ] )
+            updated_listing_image_urls = params[ :image_urls ]
+            listing_to_edit.update(
+                title: params[ :title ],
+                description: params[ :description ],
+                price: params[ :price ].to_f,
+                quantity: params[ :quantity ].to_i,
+                unit: [ "null", "undefined" ].include?( params[ :unit ] ) ? nil : params[ :unit ],
+            )
+            if params[ :new_images ]
+                params[ :new_images ].each_with_index do | image, index |
+                    new_image_data = Cloudinary::Uploader.unsigned_upload(
+                        image,
+                        "zvedamwb",
+                        cloud_name: "bythebolt",
+                        public_id: "listing_#{ listing_to_edit.id }_image_#{ index + params[ :image_urls ].length }",
+                        folder: "listings/#{ listing_to_edit.id }"
+                    )
+                    updated_listing_image_urls << new_image_data[ "url" ]
+                end
+            end
+            listing_to_edit.update( image_urls: updated_listing_image_urls )
+            ListingCategory.where( listing_id: listing_to_edit.id ).destroy_all
+            params[ :categories ].map( &:to_i ).each do | category_id |
+                ListingCategory.create( listing_id: listing_to_edit.id, category_id: category_id )
+            end
+            render json: listing_to_edit
+        end
+    end
+
     def destroy
         Listing.find( params[ :id ] ).destroy
         render json: @current_user
@@ -49,7 +86,7 @@ class ListingsController < ApplicationController
     private
 
     def listing_params
-        params.permit!
+        params.require( :listing ).permit!
     end
 
 end
