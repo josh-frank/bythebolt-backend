@@ -12,7 +12,7 @@ services = Category.create( name: "Services" )
 josh = User.create(
     username: "josh",
     password: "123",
-    avatar_url: "https://res.cloudinary.com/bythebolt/image/upload/v1616078037/avatars/josh_avatar.jpg",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616078037/avatars/josh_avatar.jpg",
     email: "EurosewUSA@gmail.com",
     bio: "Nitwit oddment blubber tweak",
     location: [ 40.81962632696764, -73.98083585780115 ]
@@ -43,12 +43,24 @@ UserCategory.create( user: diana, category: books )
 rosa = User.create(
     username: "rosa",
     password: "123",
-    avatar_url: "https://res.cloudinary.com/bythebolt/image/upload/v1616548570/avatars/rosa_avatar.jpg",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616548570/avatars/rosa_avatar.jpg",
     email: "mayin1927@gmail.com",
     bio: "Si se arregla su sallo, le durara un año - si lo arregla otra vez, te durara un mes",
     location: [ 40.98642677709743,-74.18780677127218 ]
 )
 UserCategory.create( user: rosa, category: yarn )
+
+laura = User.create(
+    username: "laura",
+    password: "123",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616556145/avatars/laura_avatar.jpg",
+    email: "lrfrank55@earthlink.net",
+    bio: "Do something for yourself today",
+    location: [ 40.47096956250373,-74.48255028961275 ]
+)
+UserCategory.create( user: laura, category: yarn )
+UserCategory.create( user: laura, category: notions )
+UserCategory.create( user: laura, category: books )
 
 twill = Listing.create(
     user: josh,
@@ -152,11 +164,11 @@ dress_form = Listing.create(
     price: 75,
     quantity: 1,
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_1.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_2.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_3.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_4.jpg",
     ]
 )
 dress_form.update( created_at: dress_form.created_at - 60.days )
@@ -194,11 +206,11 @@ caron_yarn = Listing.create(
     quantity: 10,
     unit: "skein",
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_1.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_2.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_3.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_4.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_4.jpg"
     ]
 )
 ListingCategory.create( listing: caron_yarn, category: yarn )
@@ -210,17 +222,17 @@ yarn_lot = Listing.create(
     price: 40,
     quantity: 1,
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_1.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_2.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_3.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_4.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_5.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_6.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_7.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_8.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_9.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_10.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_9.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_10.jpg"
     ]
 )
 yarn_lot.update( created_at: yarn_lot.created_at - 40.days )
@@ -234,9 +246,9 @@ reliable_iron = Listing.create(
     price: 350,
     quantity: 1,
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_1.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_2.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_2.jpg"
     ]
 )
 reliable_iron.update( created_at: reliable_iron.created_at - 40.days )
@@ -249,16 +261,16 @@ passap = Listing.create(
     price: 800,
     quantity: 1,
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_1.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_2.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_3.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_4.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_5.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_6.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_7.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_8.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_9.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_9.jpg"
     ]
 )
 passap.update( created_at: passap.created_at - 80.days )
@@ -271,12 +283,56 @@ featherweight = Listing.create(
     price: 375,
     quantity: 1,
     image_urls: [
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg",
-        "https://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg"
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg"
     ]
 )
-featherweight.update( created_at: passap.created_at - 4.days )
+featherweight.update( created_at: featherweight.created_at - 4.days )
 ListingCategory.create( listing: featherweight, category: machines )
+
+amish_winder = Listing.create(
+    user: laura,
+    title: "Antique Amish Yarn Winder",
+    description: "Traditional Amish style wooden yarn winder. This a treasured heirloom from a grandmother who grew up in Amish country who loved knitting and needlepoint. Also called a yarn skeiner, this free-standing tool is used to help wind yarn from a hank or skein into a neat yarn cake or ball.",
+    price: 149,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_4.jpg"
+    ]
+)
+ListingCategory.create( listing: amish_winder, category: notions )
+
+bates_needles = Listing.create(
+    user: laura,
+    title: "Knitting needles",
+    description: "Susan Bates Quicksilver needles, opened but never used. Size 15 US (10.00 mm), 10 inch/25 cm. Contactless pickup",
+    price: 5,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_3.jpg"
+    ]
+)
+ListingCategory.create( listing: bates_needles, category: notions )
+
+assorted_thread = Listing.create(
+    user: josh,
+    title: "Assorted spools of poly thread",
+    description: "Mostly full, mostly new. I have 36 spools for $4 each, or buy the lot for $140",
+    price: 4,
+    quantity: 36,
+    unit: "spool",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616595305/listings/15/listing_15_image_0.jpg"
+    ]
+)
+ListingCategory.create( listing: assorted_thread, category: thread )
 
 done_seeding = Time.now
 
