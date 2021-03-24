@@ -21,19 +21,23 @@ class ListingsController < ApplicationController
         )
         if new_listing.valid?
             new_listing_image_urls = []
-            params[ :images ].each_with_index do | image, index |
-                new_image_data = Cloudinary::Uploader.unsigned_upload(
-                    image,
-                    "zvedamwb",
-                    cloud_name: "bythebolt",
-                    public_id: "listing_#{ new_listing.id }_image_#{ index }",
-                    folder: "listings/#{ new_listing.id }"
-                )
-                new_listing_image_urls << new_image_data[ "url" ]
+            if params[ :images ]
+                params[ :images ].each_with_index do | image, index |
+                    new_image_data = Cloudinary::Uploader.unsigned_upload(
+                        image,
+                        "zvedamwb",
+                        cloud_name: "bythebolt",
+                        public_id: "listing_#{ new_listing.id }_image_#{ index }",
+                        folder: "listings/#{ new_listing.id }"
+                    )
+                    new_listing_image_urls << new_image_data[ "url" ]
+                end
             end
             new_listing.update( image_urls: new_listing_image_urls )
-            params[ :categories ].map( &:to_i ).each do | category_id |
-                ListingCategory.create( listing_id: new_listing.id, category_id: category_id )
+            if params[ :categories ]
+                params[ :categories ].map( &:to_i ).each do | category_id |
+                    ListingCategory.create( listing_id: new_listing.id, category_id: category_id )
+                end
             end
             render json: new_listing
         else
