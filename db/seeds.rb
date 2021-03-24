@@ -1,5 +1,7 @@
 started_seeding = Time.now
 
+############ Categories ############
+
 fabric = Category.create( name: "Fabric" )
 yarn = Category.create( name: "Yarn" )
 thread = Category.create( name: "Thread" )
@@ -8,6 +10,8 @@ books = Category.create( name: "Books/Magazines" )
 patterns = Category.create( name: "Patterns" )
 machines = Category.create( name: "Machines" )
 services = Category.create( name: "Services" )
+
+############ Users & User categories ############
 
 josh = User.create(
     username: "josh",
@@ -61,6 +65,8 @@ laura = User.create(
 UserCategory.create( user: laura, category: yarn )
 UserCategory.create( user: laura, category: notions )
 UserCategory.create( user: laura, category: books )
+
+############ Listings & Listing categories ############
 
 twill = Listing.create(
     user: josh,
@@ -333,6 +339,13 @@ assorted_thread = Listing.create(
     ]
 )
 ListingCategory.create( listing: assorted_thread, category: thread )
+
+############ Chats & Messages ############
+
+bernina_chat = Chat.create( subject: bernina.title )
+Message.create( content: "Hi, let's chat about #{ bernina.title }!", user: josh, chat: bernina_chat )
+Message.create( content: "Is this still available?", user: elna, chat: bernina_chat )
+Message.create( content: "Yes, are you interested?", user: josh, chat: bernina_chat )
 
 done_seeding = Time.now
 

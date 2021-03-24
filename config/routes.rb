@@ -33,4 +33,8 @@ Rails.application.routes.draw do
   post "favorites", to: "favorite_listings#create"
   delete "favorites/:id", to: "favorite_listings#destroy"
 
+  ########## Favorites ##########
+
+  get "chats/:id", to: "chats#show"
+
 end

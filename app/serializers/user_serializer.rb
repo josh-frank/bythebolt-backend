@@ -8,4 +8,6 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :favorite_listings, serializer: FavoriteListingSerializerForUser
 
+  has_many :chats
+
 end
