@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2021_03_24_144730) do
 
   create_table "chats", force: :cascade do |t|
     t.string "subject"
+    t.bigint "listing_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_chats_on_listing_id"
   end
 
   create_table "favorite_listings", force: :cascade do |t|
@@ -89,6 +91,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_144730) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "chats", "listings"
   add_foreign_key "favorite_listings", "listings"
   add_foreign_key "favorite_listings", "users"
   add_foreign_key "listing_categories", "categories"

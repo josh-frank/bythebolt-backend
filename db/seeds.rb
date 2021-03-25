@@ -342,12 +342,12 @@ ListingCategory.create( listing: assorted_thread, category: thread )
 
 ############ Chats & Messages ############
 
-bernina_chat = Chat.create( subject: bernina.title )
+bernina_chat = Chat.create( listing: bernina, subject: bernina.title )
 Message.create( content: "Hi, let's chat about #{ bernina.title }!", user: josh, chat: bernina_chat )
 Message.create( content: "Is this still available?", user: elna, chat: bernina_chat )
 Message.create( content: "Yes, are you interested?", user: josh, chat: bernina_chat )
 
-reliable_iron_chat = Chat.create( subject: reliable_iron.title )
+reliable_iron_chat = Chat.create( listing: reliable_iron, subject: reliable_iron.title )
 Message.create( content: "Hi, let's chat about #{ reliable_iron.title }!", user: rosa, chat: reliable_iron_chat )
 Message.create( content: "Can this item be shipped?", user: josh, chat: reliable_iron_chat )
 Message.create( content: "No, sorry, local pickup only", user: rosa, chat: reliable_iron_chat )

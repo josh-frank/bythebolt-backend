@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   ########## Chats ##########
 
   get "chats/:id", to: "chats#show"
+  post "chats", to: "chats#create"
 
   ########## Messages ##########
 

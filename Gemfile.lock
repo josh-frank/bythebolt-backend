@@ -207,6 +207,7 @@ DEPENDENCIES
   jwt
   kaminari
   listen (~> 3.3)
+  mimemagic (= 0.3.5)
   pager_api
   pagy
   pg (~> 1.1)
