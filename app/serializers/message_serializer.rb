@@ -1,9 +1,6 @@
 class MessageSerializer < ActiveModel::Serializer
 
-  attributes :id, :content, :message_user
-
-  # has_one :chat
-  # has_one :user
+  attributes :id, :content, :message_user, :created_at
 
   def message_user
     {

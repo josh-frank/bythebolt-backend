@@ -347,6 +347,12 @@ Message.create( content: "Hi, let's chat about #{ bernina.title }!", user: josh,
 Message.create( content: "Is this still available?", user: elna, chat: bernina_chat )
 Message.create( content: "Yes, are you interested?", user: josh, chat: bernina_chat )
 
+reliable_iron_chat = Chat.create( subject: reliable_iron.title )
+Message.create( content: "Hi, let's chat about #{ reliable_iron.title }!", user: rosa, chat: reliable_iron_chat )
+Message.create( content: "Can this item be shipped?", user: josh, chat: reliable_iron_chat )
+Message.create( content: "No, sorry, local pickup only", user: rosa, chat: reliable_iron_chat )
+Message.create( content: "OK thanks anyway", user: josh, chat: reliable_iron_chat )
+
 done_seeding = Time.now
 
 puts "🧵🧵🧵🧵🧵🧵 Seeded: #{ done_seeding - started_seeding } secs. 🧵🧵🧵🧵🧵🧵"

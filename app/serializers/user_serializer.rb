@@ -10,4 +10,8 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :chats
 
+  def chats
+    object.chats.uniq
+  end
+
 end

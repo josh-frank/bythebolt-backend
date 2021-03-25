@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  ########## ActionCable ##########
+
+  mount ActionCable.server => "/cable"
+
   ########## Auth ##########
   
   post "login", to: "users#login"
