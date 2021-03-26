@@ -5,8 +5,8 @@ class MessagesController < ApplicationController
     def create
         sent_message = Message.create( message_params )
         if sent_message.valid?
-            ChatChannel.broadcast_to( Chat.find( message_params[ :chat_id ] ), MessageSerializer.new( sent_message ) )
-            render json: { current_user: UserSerializer.new( @current_user ), sent_message: sent_message }
+            ChatChannel.broadcast_to( Chat.find( message_params[ :chat_id ] ), ChatSerializer.new( Chat.find( message_params[ :chat_id ] ) ) )
+            render json: @current_user
         end
     end
 
