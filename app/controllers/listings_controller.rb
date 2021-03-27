@@ -7,10 +7,13 @@ class ListingsController < ApplicationController
     end
 
     def search
-        search_results = paginate Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" ), per_page: params[ :per_page ]
+        all_search_results = Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" )
+        search_results = paginate all_search_results, per_page: params[ :per_page ]
+        result_categories = all_search_results.map{ | listing | listing.listing_categories.map{ | listing_category | listing_category.category.name } }.flatten
         render json: {
             query: params[ :query ] ? params[ :query ] : "",
             listings: search_results.map{ | listing | ListingSerializer.new( listing ) },
+            categories: Hash[ result_categories.uniq.collect{ | category | [ category, result_categories.count( category ) ] } ],
             metadata: pagination_metadata( search_results )
         }
     end
@@ -102,13 +105,13 @@ class ListingsController < ApplicationController
         params.require( :listing ).permit!
     end
 
-    def pagination_metadata( listing )
+    def pagination_metadata( search_results )
         {        
-            current_page: listing.current_page,
-            next_page: listing.next_page,
-            prev_page: listing.prev_page,
-            total_pages: listing.total_pages,
-            total_count: listing.total_count
+            current_page: search_results.current_page,
+            next_page: search_results.next_page,
+            prev_page: search_results.prev_page,
+            total_pages: search_results.total_pages,
+            total_count: search_results.total_count
         }    
     end
 
