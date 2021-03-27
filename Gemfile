@@ -44,8 +44,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mimemagic', "0.3.5"
 
 gem 'kaminari' 
-gem 'pager_api'
-gem 'pagy'
+# gem 'pager_api'
+# gem 'pagy'
+gem 'api-pagination'
 gem 'active_model_serializers'
 
 gem 'jwt'

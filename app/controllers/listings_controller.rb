@@ -6,6 +6,15 @@ class ListingsController < ApplicationController
         render json: Listing.all
     end
 
+    def search
+        search_results = paginate Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" ), per_page: params[ :per_page ]
+        render json: {
+            query: params[ :query ] ? params[ :query ] : "",
+            listings: search_results.map{ | listing | ListingSerializer.new( listing ) },
+            metadata: pagination_metadata( search_results )
+        }
+    end
+
     def show
         render json: Listing.find( params[ :id ] )
     end
@@ -91,6 +100,16 @@ class ListingsController < ApplicationController
 
     def listing_params
         params.require( :listing ).permit!
+    end
+
+    def pagination_metadata( listing )
+        {        
+            current_page: listing.current_page,
+            next_page: listing.next_page,
+            prev_page: listing.prev_page,
+            total_pages: listing.total_pages,
+            total_count: listing.total_count
+        }    
     end
 
 end

@@ -65,6 +65,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    api-pagination (4.8.2)
     aws_cf_signer (0.1.3)
     bcrypt (3.1.16)
     bootsnap (1.7.2)
@@ -129,8 +130,6 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.2-x86_64-darwin)
       racc (~> 1.4)
-    pager_api (0.3.2)
-    pagy (3.12.0)
     pg (1.2.3)
     puma (5.2.2)
       nio4r (~> 2.0)
@@ -199,6 +198,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  api-pagination
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
@@ -208,8 +208,6 @@ DEPENDENCIES
   kaminari
   listen (~> 3.3)
   mimemagic (= 0.3.5)
-  pager_api
-  pagy
   pg (~> 1.1)
   puma (~> 5.0)
   rack-cors

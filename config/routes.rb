@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   ########## Listings ##########
   
   get "listings", to: "listings#index"
+  get "search", to: "listings#search"
   post "listings", to: "listings#create"
   patch "listings/:id", to: "listings#update"
   delete "listings/:id", to: "listings#destroy"

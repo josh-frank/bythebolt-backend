@@ -66,6 +66,30 @@ UserCategory.create( user: laura, category: yarn )
 UserCategory.create( user: laura, category: notions )
 UserCategory.create( user: laura, category: books )
 
+marty = User.create(
+    username: "marty",
+    password: "123",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616799677/avatars/marty_avatar.jpg",
+    email: "martinfrank@earthlink.net",
+    bio: "I have seized the light! I have arrested its flight!",
+    location: [ 40.957911013294776, -74.30871072225274 ]
+)
+UserCategory.create( user: marty, category: notions )
+UserCategory.create( user: marty, category: books )
+
+central_fabric = User.create(
+    username: "central_fabric",
+    password: "123",
+    avatar_url: "http://res.cloudinary.com/bythebolt/image/upload/v1616806425/avatars/central_fabric_avatar.jpg",
+    email: "centralfabricsinc@gmail.com",
+    bio: "Store offering a variety of fabric & notions, plus sewing classes, alterations & machine repairs.",
+    location: [ 40.762695180323895, -74.22413857653738 ]
+)
+UserCategory.create( user: central_fabric, category: fabric )
+UserCategory.create( user: central_fabric, category: patterns )
+UserCategory.create( user: central_fabric, category: notions )
+UserCategory.create( user: central_fabric, category: services )
+
 ############ Listings & Listing categories ############
 
 twill = Listing.create(
@@ -82,6 +106,7 @@ twill = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290195/listings/1/listing_1_image_3.jpg"
     ]
 )
+twill.update( created_at: twill.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: twill, category: fabric )
 
 bernina = Listing.create(
@@ -103,7 +128,7 @@ bernina = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290664/listings/2/listing_2_image_9.jpg"
     ]
 )
-bernina.update( created_at: bernina.created_at - 14.days )
+bernina.update( created_at: bernina.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: bernina, category: machines )
 FavoriteListing.create( user: elna, listing: bernina )
 
@@ -121,7 +146,7 @@ shears = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616291056/listings/3/listing_3_image_4.jpg"
     ]
 )
-shears.update( created_at: shears.created_at - 7.days )
+shears.update( created_at: shears.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: shears, category: notions )
 FavoriteListing.create( user: elna, listing: shears )
 
@@ -146,7 +171,7 @@ strommen = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616381203/listings/4/listing_4_image_11.jpg"
     ]
 )
-strommen.update( created_at: strommen.created_at - 30.days )
+strommen.update( created_at: strommen.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: strommen, category: notions )
 
 voile = Listing.create(
@@ -161,6 +186,7 @@ voile = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616519601/listings/5/listing_5_image_1.jpg"
     ]
 )
+voile.update( created_at: voile.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: voile, category: fabric )
 
 dress_form = Listing.create(
@@ -177,7 +203,7 @@ dress_form = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_4.jpg",
     ]
 )
-dress_form.update( created_at: dress_form.created_at - 60.days )
+dress_form.update( created_at: dress_form.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: dress_form, category: notions )
 
 rural_pa_clothing = Listing.create(
@@ -200,7 +226,7 @@ rural_pa_clothing = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616535890/listings/7/listing_7_image_10.jpg"
     ]
 )
-rural_pa_clothing.update( created_at: rural_pa_clothing.created_at - 2.days )
+rural_pa_clothing.update( created_at: rural_pa_clothing.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: rural_pa_clothing, category: books )
 ListingCategory.create( listing: rural_pa_clothing, category: patterns )
 
@@ -219,6 +245,7 @@ caron_yarn = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_4.jpg"
     ]
 )
+caron_yarn.update( created_at: caron_yarn.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: caron_yarn, category: yarn )
 
 yarn_lot = Listing.create(
@@ -241,7 +268,7 @@ yarn_lot = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_10.jpg"
     ]
 )
-yarn_lot.update( created_at: yarn_lot.created_at - 40.days )
+yarn_lot.update( created_at: yarn_lot.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: yarn_lot, category: yarn )
 ListingCategory.create( listing: yarn_lot, category: patterns )
 
@@ -257,7 +284,7 @@ reliable_iron = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_2.jpg"
     ]
 )
-reliable_iron.update( created_at: reliable_iron.created_at - 40.days )
+reliable_iron.update( created_at: reliable_iron.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: reliable_iron, category: machines )
 
 passap = Listing.create(
@@ -279,7 +306,7 @@ passap = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_9.jpg"
     ]
 )
-passap.update( created_at: passap.created_at - 80.days )
+passap.update( created_at: passap.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: passap, category: machines )
 
 featherweight = Listing.create(
@@ -293,7 +320,7 @@ featherweight = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg"
     ]
 )
-featherweight.update( created_at: featherweight.created_at - 4.days )
+featherweight.update( created_at: featherweight.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: featherweight, category: machines )
 
 amish_winder = Listing.create(
@@ -310,6 +337,7 @@ amish_winder = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_4.jpg"
     ]
 )
+amish_winder.update( created_at: amish_winder.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: amish_winder, category: notions )
 
 bates_needles = Listing.create(
@@ -325,6 +353,7 @@ bates_needles = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_3.jpg"
     ]
 )
+bates_needles.update( created_at: bates_needles.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: bates_needles, category: notions )
 
 assorted_thread = Listing.create(
@@ -338,7 +367,165 @@ assorted_thread = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616595305/listings/15/listing_15_image_0.jpg"
     ]
 )
+assorted_thread.update( created_at: assorted_thread.created_at - rand( 0..100 ).days )
 ListingCategory.create( listing: assorted_thread, category: thread )
+
+featherweight_bobbin_cases = Listing.create(
+    user: josh,
+    title: "ORIGINAL Singer 45750 bobbin case for Featherweight & other machines",
+    description: "I have THREE (3) Singer Featherweight bobbin cases available. ORIGINAL VINTAGE SIMANCO PART! Made in USA. All three have been cleaned/polished and checked for tension. YES, they are expensive!! Please contact for more details and to inqure about shipping.",
+    price: 89.99,
+    quantity: 3,
+    unit: "each",
+    image_urls: [
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616798435/listings/16/listing_16_image_0.jpg",
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616798435/listings/16/listing_16_image_1.jpg",
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616798435/listings/16/listing_16_image_2.jpg",
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616798435/listings/16/listing_16_image_3.jpg"
+    ]
+)
+featherweight_bobbin_cases.update( created_at: featherweight_bobbin_cases.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: featherweight_bobbin_cases, category: notions )
+
+schmetz_needles = Listing.create(
+    user: marty,
+    title: "Lot of Vintage Schmetz Sewing Machine Needles assorted sizes",
+    description: "Schmetz 110 FL sewing machine needles, size 90/14. I did not count the needles but they feel full. High quality vintage needles made in Germany. 10 each or 100 for the lot",
+    price: 10,
+    quantity: 12,
+    unit: "each",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616799987/listings/17/listing_17_image_0.jpg"
+    ]
+)
+schmetz_needles.update( created_at: schmetz_needles.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: schmetz_needles, category: notions )
+
+bernina_favorit = Listing.create(
+    user: marty,
+    title: "Vintage Bernina Favorit 740 sewing machine",
+    description: "Amazing vintage Bernina Favorit 740 sewing machine in great original condition! Clean in and out with no missing or damaged parts. Sews a beautiful stitch! Comes with instruction manual, original feet, buttonhole knife, and foot pedal/power cord. Please be aware this is a European machine and runs on 220v power. You need a transformer to use it in North America. CASH ON PICKUP ONLY - this item is too heavy to ship!! Please ask any questions.",
+    price: 650,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_9.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800404/listings/18/listing_18_image_10.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616800412/listings/18/listing_18_image_11.jpg"
+    ]
+)
+bernina_favorit.update( created_at: bernina_favorit.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: bernina_favorit, category: machines )
+
+muslin_bolt = Listing.create(
+    user: central_fabric,
+    title: "100% ORGANIC COTTON UNBLEACHED MUSLIN BTY",
+    description: "NATURAL UNBLEACHED WHITE MEDIUM WEIGHT NATURAL COTTON MUSLIN CUT FROM 1ST QUALITY ROLL 100% COTTON - MUSLIN FABRIC IS GREAT FOR QUILTING, CLOTHING, CURTAINS, APRONS, SHEETS, PILLOW CASES, AND CRAFT PROJECTS ORDERING 1 WILL GIVE YOU 48\" WIDE BY 36\" LONG, IF YOU ORDER MORE THAN 1 YARD IT WILL BE ONE CONTINUOUS PIECE - PLEASE INQUIRE ABOUT BULK/BOLT DISCOUNTS MACHINE WASH WARM TUMBLE DRY REMOVE PROMPTLY PICKUP FROM CENTRAL FABRICS EAST ORANGE NJ",
+    price: 4,
+    quantity: 100,
+    unit: "yard",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807224/listings/19/listing_19_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616807232/listings/19/listing_19_image_9.jpg"
+    ]
+)
+muslin_bolt.update( created_at: muslin_bolt.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: muslin_bolt, category: fabric )
+
+quilting_thread_lot = Listing.create(
+    user: marty,
+    title: "Lot of 70 Spools of Quilting Thread (Guttermann, Mettler, Coates, etc.) plus 2 wood thread stands",
+    description: "I am selling this for my wife who loves to quilt\nThreads of various types, brands, etc including polyester, cotton, and silk\nI am including two very sturdy wood spool stands, the smaller one is made by June Taylor",
+    price: 70,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808032/listings/20/listing_20_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616808038/listings/20/listing_20_image_7.jpg"
+    ]
+)
+quilting_thread_lot.update( created_at: quilting_thread_lot.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: quilting_thread_lot, category: thread )
+
+green_plaid_upholstery = Listing.create(
+    user: central_fabric,
+    title: "PLAID GREEN UPHOLSTERY FABRIC 100% COTTON",
+    description: "GREEN COTTON UPHOLSTERY FABRIC MEDIUM TO HEAVY WEIGHT\nIF YOU ORDER MORE THAN 1 YARD IT WILL BE ONE CONTINUOUS PIECE\nPLEASE INQUIRE ABOUT BULK/BOLT DISCOUNTS\nPICKUP FROM CENTRAL FABRICS EAST ORANGE NJ",
+    price: 8,
+    quantity: 17,
+    unit: "yard",
+    image_urls: [
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616809155/listings/21/listing_21_image_0.jpg",
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616809155/listings/21/listing_21_image_1.jpg",
+        "https://res.cloudinary.com/bythebolt/image/upload/v1616809155/listings/21/listing_21_image_2.jpg"
+    ]
+)
+green_plaid_upholstery.update( created_at: green_plaid_upholstery.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: green_plaid_upholstery, category: fabric )
+
+green_pattern_case = Listing.create(
+    user: marty,
+    title: "Green plastic pattern case with vintage sewing patterns - McCalls, Butterick",
+    description: "Green sewing pattern case with vintage sewing patterns for men, women and children from McCalls, Butterick, Vogue, See & Sew and more. Please ask for full pattern list. Sold as a lot",
+    price: 50,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_7.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858518/listings/22/listing_22_image_8.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858524/listings/22/listing_22_image_9.jpg"
+    ]
+)
+green_pattern_case.update( created_at: green_pattern_case.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: green_pattern_case, category: patterns )
+ListingCategory.create( listing: green_pattern_case, category: notions )
+
+workbasket_magazines = Listing.create(
+    user: marty,
+    title: "Vintage 1950's sewing/knitting magazine issues - \"The Workbasket\"",
+    description: "Lot of 20 vintage sewing, knitting, crocheting, crafting magazines from the fifties. Fair/poor condition but still readable. Sold as a lot for my wife. Thanks for looking",
+    price: 15,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_3.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_4.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_5.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858881/listings/23/listing_23_image_6.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1616858889/listings/23/listing_23_image_7.jpg"
+    ]
+)
+workbasket_magazines.update( created_at: workbasket_magazines.created_at - rand( 0..100 ).days )
+ListingCategory.create( listing: workbasket_magazines, category: books )
 
 ############ Chats & Messages ############
 
