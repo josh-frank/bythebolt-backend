@@ -7,11 +7,12 @@ class ListingsController < ApplicationController
     end
 
     def search
-        all_search_results = Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" )
-        search_results = paginate all_search_results, per_page: params[ :per_page ]
-        result_categories = all_search_results.map{ | listing | listing.listing_categories.map{ | listing_category | listing_category.category.name } }.flatten
+        all_results = Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" )
+        filtered_results = all_results.select{ | listing | params[ :category ].blank? ? true : listing.categories.map( &:name ).include?( params[ :category ] ) }
+        search_results = paginate filtered_results, per_page: params[ :per_page ]
+        result_categories = all_results.map{ | listing | listing.listing_categories.map{ | listing_category | listing_category.category.name } }.flatten
+        # byebug
         render json: {
-            query: params[ :query ] ? params[ :query ] : "",
             listings: search_results.map{ | listing | ListingSerializer.new( listing ) },
             categories: Hash[ result_categories.uniq.collect{ | category | [ category, result_categories.count( category ) ] } ],
             metadata: pagination_metadata( search_results )
