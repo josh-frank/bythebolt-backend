@@ -8,10 +8,19 @@ class ListingsController < ApplicationController
 
     def search
         all_results = Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" )
+        case params[ :sort ]
+        when "newest"
+            all_results = all_results.sort_by( &:created_at ).reverse
+        when "nearest"
+            all_results = all_results.sort_by{ | listing | distance_between( listing.user.location, params[ :location ].split( "," ).map( &:to_f ) ) } unless params[ :location ].blank?
+        when "price-asc"
+            all_results = all_results.sort_by( &:price )
+        when "price-desc"
+            all_results = all_results.sort_by( &:price ).reverse
+        end
         filtered_results = all_results.select{ | listing | params[ :category ].blank? ? true : listing.categories.map( &:name ).include?( params[ :category ] ) }
         search_results = paginate filtered_results, per_page: params[ :per_page ]
         result_categories = all_results.map{ | listing | listing.listing_categories.map{ | listing_category | listing_category.category.name } }.flatten
-        # byebug
         render json: {
             listings: search_results.map{ | listing | ListingSerializer.new( listing ) },
             categories: Hash[ result_categories.uniq.collect{ | category | [ category, result_categories.count( category ) ] } ],
@@ -114,6 +123,26 @@ class ListingsController < ApplicationController
             total_pages: search_results.total_pages,
             total_count: search_results.total_count
         }    
+    end
+
+    def degrees_to_radians( degrees )
+        degrees * ( Math::PI / 180 )
+    end
+
+    def distance_between( these_coordinates, those_coordinates )
+        this_latitude = these_coordinates[ 0 ]
+        this_longitude = these_coordinates[ 1 ]
+        that_latitude = those_coordinates[ 0 ]
+        that_longitude = those_coordinates[ 1 ]
+        # Earth's radius in km
+        # earths_radius = 6371
+        # Earth's radius in mi
+        earths_radius = 3958.8
+        latitude_distance = degrees_to_radians( that_latitude - this_latitude )
+        longitude_distance = degrees_to_radians( that_longitude - this_longitude )
+        a = Math.sin( latitude_distance / 2 ) * Math.sin( latitude_distance / 2 ) + Math.cos( degrees_to_radians( this_latitude ) ) * Math.cos( degrees_to_radians( that_latitude ) ) * Math.sin( longitude_distance / 2 ) * Math.sin( longitude_distance / 2 )
+        c = 2 * Math.atan2( Math.sqrt( a ), Math.sqrt( 1 - a ) )
+        return earths_radius * c
     end
 
 end
