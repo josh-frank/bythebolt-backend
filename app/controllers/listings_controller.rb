@@ -6,6 +6,10 @@ class ListingsController < ApplicationController
         render json: Listing.all
     end
 
+    def new_listings
+        render json: Listing.all.sort_by( &:created_at ).reverse.first( params[ :limit ].to_i )
+    end
+
     def search
         all_results = Listing.where( "lower( title ) LIKE ?", "%" + ( params[ :query ] ? params[ :query ] : "" ) + "%" )
         case params[ :sort ]

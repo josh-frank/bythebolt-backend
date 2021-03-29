@@ -26,12 +26,13 @@ Rails.application.routes.draw do
 
   ########## Listings ##########
   
-  get "listings", to: "listings#index"
   get "search", to: "listings#search"
+  get "listings", to: "listings#index"
+  get "listings/new/:limit", to: "listings#new_listings"
+  get "listings/:id", to: "listings#show"
   post "listings", to: "listings#create"
   patch "listings/:id", to: "listings#update"
   delete "listings/:id", to: "listings#destroy"
-  get "listings/:id", to: "listings#show"
   
   ########## Favorites ##########
 
