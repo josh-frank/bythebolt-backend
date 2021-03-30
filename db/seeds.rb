@@ -106,7 +106,7 @@ twill = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290195/listings/1/listing_1_image_3.jpg"
     ]
 )
-twill.update( created_at: twill.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+twill.update( created_at: twill.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: twill, category: fabric )
 
 bernina = Listing.create(
@@ -128,7 +128,7 @@ bernina = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616290664/listings/2/listing_2_image_9.jpg"
     ]
 )
-bernina.update( created_at: bernina.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+bernina.update( created_at: bernina.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: bernina, category: machines )
 FavoriteListing.create( user: elna, listing: bernina )
 
@@ -146,7 +146,7 @@ shears = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616291056/listings/3/listing_3_image_4.jpg"
     ]
 )
-shears.update( created_at: shears.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+shears.update( created_at: shears.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: shears, category: notions )
 FavoriteListing.create( user: elna, listing: shears )
 
@@ -171,7 +171,7 @@ strommen = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616381203/listings/4/listing_4_image_11.jpg"
     ]
 )
-strommen.update( created_at: strommen.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+strommen.update( created_at: strommen.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: strommen, category: notions )
 
 voile = Listing.create(
@@ -186,7 +186,7 @@ voile = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616519601/listings/5/listing_5_image_1.jpg"
     ]
 )
-voile.update( created_at: voile.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+voile.update( created_at: voile.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: voile, category: fabric )
 
 dress_form = Listing.create(
@@ -203,7 +203,7 @@ dress_form = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616533383/listings/6/listing_6_image_4.jpg",
     ]
 )
-dress_form.update( created_at: dress_form.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+dress_form.update( created_at: dress_form.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: dress_form, category: notions )
 
 rural_pa_clothing = Listing.create(
@@ -226,7 +226,7 @@ rural_pa_clothing = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616535890/listings/7/listing_7_image_10.jpg"
     ]
 )
-rural_pa_clothing.update( created_at: rural_pa_clothing.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+rural_pa_clothing.update( created_at: rural_pa_clothing.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: rural_pa_clothing, category: books )
 ListingCategory.create( listing: rural_pa_clothing, category: patterns )
 
@@ -245,7 +245,7 @@ caron_yarn = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616544772/listings/8/listing_8_image_4.jpg"
     ]
 )
-caron_yarn.update( created_at: caron_yarn.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+caron_yarn.update( created_at: caron_yarn.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: caron_yarn, category: yarn )
 
 yarn_lot = Listing.create(
@@ -268,7 +268,7 @@ yarn_lot = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616547840/listings/9/listing_9_image_10.jpg"
     ]
 )
-yarn_lot.update( created_at: yarn_lot.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+yarn_lot.update( created_at: yarn_lot.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: yarn_lot, category: yarn )
 ListingCategory.create( listing: yarn_lot, category: patterns )
 
@@ -284,7 +284,7 @@ reliable_iron = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616549181/listings/10/listing_10_image_2.jpg"
     ]
 )
-reliable_iron.update( created_at: reliable_iron.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+reliable_iron.update( created_at: reliable_iron.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: reliable_iron, category: machines )
 
 passap = Listing.create(
@@ -306,7 +306,7 @@ passap = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616549807/listings/11/listing_11_image_9.jpg"
     ]
 )
-passap.update( created_at: passap.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+passap.update( created_at: passap.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: passap, category: machines )
 
 featherweight = Listing.create(
@@ -320,7 +320,7 @@ featherweight = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616555064/listings/12/listing_12_image_0.jpg"
     ]
 )
-featherweight.update( created_at: featherweight.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+featherweight.update( created_at: featherweight.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: featherweight, category: machines )
 
 amish_winder = Listing.create(
@@ -337,7 +337,7 @@ amish_winder = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616556510/listings/13/listing_13_image_4.jpg"
     ]
 )
-amish_winder.update( created_at: amish_winder.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+amish_winder.update( created_at: amish_winder.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: amish_winder, category: notions )
 
 bates_needles = Listing.create(
@@ -353,7 +353,7 @@ bates_needles = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616557451/listings/14/listing_14_image_3.jpg"
     ]
 )
-bates_needles.update( created_at: bates_needles.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+bates_needles.update( created_at: bates_needles.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: bates_needles, category: notions )
 
 assorted_thread = Listing.create(
@@ -367,7 +367,7 @@ assorted_thread = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616595305/listings/15/listing_15_image_0.jpg"
     ]
 )
-assorted_thread.update( created_at: assorted_thread.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+assorted_thread.update( created_at: assorted_thread.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: assorted_thread, category: thread )
 
 featherweight_bobbin_cases = Listing.create(
@@ -384,7 +384,7 @@ featherweight_bobbin_cases = Listing.create(
         "https://res.cloudinary.com/bythebolt/image/upload/v1616798435/listings/16/listing_16_image_3.jpg"
     ]
 )
-featherweight_bobbin_cases.update( created_at: featherweight_bobbin_cases.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+featherweight_bobbin_cases.update( created_at: featherweight_bobbin_cases.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: featherweight_bobbin_cases, category: notions )
 
 schmetz_needles = Listing.create(
@@ -398,7 +398,7 @@ schmetz_needles = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616799987/listings/17/listing_17_image_0.jpg"
     ]
 )
-schmetz_needles.update( created_at: schmetz_needles.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+schmetz_needles.update( created_at: schmetz_needles.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: schmetz_needles, category: notions )
 
 bernina_favorit = Listing.create(
@@ -422,7 +422,7 @@ bernina_favorit = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616800412/listings/18/listing_18_image_11.jpg"
     ]
 )
-bernina_favorit.update( created_at: bernina_favorit.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+bernina_favorit.update( created_at: bernina_favorit.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: bernina_favorit, category: machines )
 
 muslin_bolt = Listing.create(
@@ -445,7 +445,7 @@ muslin_bolt = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616807232/listings/19/listing_19_image_9.jpg"
     ]
 )
-muslin_bolt.update( created_at: muslin_bolt.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+muslin_bolt.update( created_at: muslin_bolt.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: muslin_bolt, category: fabric )
 
 quilting_thread_lot = Listing.create(
@@ -465,7 +465,7 @@ quilting_thread_lot = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616808038/listings/20/listing_20_image_7.jpg"
     ]
 )
-quilting_thread_lot.update( created_at: quilting_thread_lot.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+quilting_thread_lot.update( created_at: quilting_thread_lot.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: quilting_thread_lot, category: thread )
 
 green_plaid_upholstery = Listing.create(
@@ -481,7 +481,7 @@ green_plaid_upholstery = Listing.create(
         "https://res.cloudinary.com/bythebolt/image/upload/v1616809155/listings/21/listing_21_image_2.jpg"
     ]
 )
-green_plaid_upholstery.update( created_at: green_plaid_upholstery.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+green_plaid_upholstery.update( created_at: green_plaid_upholstery.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: green_plaid_upholstery, category: fabric )
 
 green_pattern_case = Listing.create(
@@ -503,7 +503,7 @@ green_pattern_case = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616858524/listings/22/listing_22_image_9.jpg"
     ]
 )
-green_pattern_case.update( created_at: green_pattern_case.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+green_pattern_case.update( created_at: green_pattern_case.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: green_pattern_case, category: patterns )
 ListingCategory.create( listing: green_pattern_case, category: notions )
 
@@ -524,8 +524,24 @@ workbasket_magazines = Listing.create(
         "http://res.cloudinary.com/bythebolt/image/upload/v1616858889/listings/23/listing_23_image_7.jpg"
     ]
 )
-workbasket_magazines.update( created_at: workbasket_magazines.created_at - rand( 0..100 ).days ) if [ false, false, false, false, true ].sample
+workbasket_magazines.update( created_at: workbasket_magazines.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: workbasket_magazines, category: books )
+
+adler = Listing.create(
+    user: elna,
+    title: "Antique Adler 187 sewing machine",
+    description: "Adler 187 antique made in germany great condition comes with accessories very heavy local pickup only",
+    price: 600,
+    quantity: 1,
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617052427/listings/24/listing_24_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617052427/listings/24/listing_24_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617052429/listings/24/listing_24_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617052429/listings/24/listing_24_image_3.jpg"
+    ]
+)
+adler.update( created_at: adler.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
+ListingCategory.create( listing: adler, category: machines )
 
 ############ Chats & Messages ############
 
