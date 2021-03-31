@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get "listings/:id", to: "listings#show"
   post "listings", to: "listings#create"
   patch "listings/:id", to: "listings#update"
+  patch "mark_sold/:id", to: "listings#toggle_availability"
   delete "listings/:id", to: "listings#destroy"
   
   ########## Favorites ##########

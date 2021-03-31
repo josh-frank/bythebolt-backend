@@ -108,6 +108,12 @@ class ListingsController < ApplicationController
         end
     end
 
+    def toggle_availability
+        listing_to_toggle = Listing.find( params[ :id ] )
+        listing_to_toggle.update( active: !listing_to_toggle.active )
+        render json: listing_to_toggle
+    end
+
     def destroy
         Listing.find( params[ :id ] ).destroy
         render json: @current_user

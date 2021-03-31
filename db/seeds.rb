@@ -543,6 +543,23 @@ adler = Listing.create(
 adler.update( created_at: adler.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
 ListingCategory.create( listing: adler, category: machines )
 
+interfacing = Listing.create(
+    user: elna,
+    title: "Pellon fusible interfacing packages",
+    description: "3 packages of Pellon nylon fusible - great condition unused cash only pickup in 10019",
+    price: 3.99,
+    quantity: 4,
+    unit: "each",
+    image_urls: [
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617224027/listings/25/listing_25_image_0.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617224027/listings/25/listing_25_image_1.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617224027/listings/25/listing_25_image_2.jpg",
+        "http://res.cloudinary.com/bythebolt/image/upload/v1617224030/listings/25/listing_25_image_3.jpg"
+    ]
+)
+interfacing.update( created_at: interfacing.created_at - rand( 0..100 ).days ) if [ true, true, true, true, true, true, true, true, true, false ].sample
+ListingCategory.create( listing: interfacing, category: fabric )
+
 ############ Chats & Messages ############
 
 bernina_chat = Chat.create( listing: bernina, subject: bernina.title )
